@@ -2,7 +2,7 @@
 ```File : config.ini```
 ```bash
 [gmail]
-fromMail = 
-password = 
-receiverMail =
+fromMail = 발송메일
+password = 발급받은 암호
+receiverMail = 수신메일
 ```
