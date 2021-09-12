@@ -9,15 +9,17 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.utils import formataddr
 import mailTemplate
+import os
 
 config = configparser.ConfigParser()
-config.read('config.ini', encoding='utf-8')
+path = '/'.join((os.path.abspath(__file__).replace('\\', '/')).split('/')[:-1])
+config.read(os.path.join(path, 'config.ini'), encoding='utf-8')
 config.sections()
 
 # 크롤링 키워드
 SEARCH_KEY_WORDS = ['양지병원', 'H+양지병원', 'H PLUS 양지병원']
 GMAIL_APP_CONFIG = {
-    'fromMail': config['gmail']['formMail'],
+    'fromMail': config['gmail']['fromMail'],
     'password': config['gmail']['password']
 }
 RECEIVER_MAIL = config['gmail']['receiverMail']
